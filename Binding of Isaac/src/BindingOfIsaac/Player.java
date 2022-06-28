@@ -23,9 +23,14 @@ public class Player {
     private int health;
     private int maxHealth;
     private int attack;
-    private int baseAttack;
-    private int attackNumber;
-    private int baseAttackNumber;
+    private int
+
+
+
+            baseAttack;
+    private int attacksCompleted;
+    private int attackLimit;
+    private int baseAttackLimit;
     private boolean hasPurchased;
 
     private int treasureCost=10;
@@ -46,8 +51,9 @@ public class Player {
         this.health=maxHealth;
         this.baseAttack=card.getAttack();
         this.attack=baseAttack;
-        this.attackNumber=1;
-        this.baseAttackNumber=1;
+        this.baseAttackLimit=1;
+        this.attacksCompleted=0;
+        this.attackLimit=baseAttackLimit;
         this.hasPurchased=false;
 
         this.hand=new LinkedList<LootCard>();
@@ -127,9 +133,11 @@ public class Player {
     public boolean isTapped() {return tapped;}
     public boolean hasPurchased(){return hasPurchased();}
 
-    public int getBaseAttackNumber() {return baseAttackNumber;}
+
+    public int getBaseAttackLimit(){ return baseAttackLimit;}
+    public int getAttackLimit(){return attackLimit;}
+    public int getAttacksCompleted(){return attacksCompleted;}
     public int getBaseAttack() {return baseAttack;}
-    public int getAttackNumber() {return attackNumber;}
     public int getMaxHealth() {return maxHealth;}
     public int getNumSouls() {return numSouls;}
     public int getMoney(){return money;}
